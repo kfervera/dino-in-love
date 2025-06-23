@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; /* Or any other color for a "blank" page */
+    overflow: hidden; /* Hide scrollbars if fireworks go out of bounds */
+}
+
+#fireworksButton {
+    padding: 15px 30px;
+    font-size: 1.5em;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10; /* Ensure button is above canvas */
+    position: relative; /* Needed for z-index to work as expected with canvas */
+}
+
+#fireworksCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allows clicks to go through the canvas to the button */
+    z-index: 1; /* Behind the button but above the body background */
+}
